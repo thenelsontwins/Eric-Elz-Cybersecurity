@@ -5,7 +5,7 @@ Cybersecurity
 
 The files in this repository were used to configure the network depicted below.
 
-(Images/eric%20elz%20unit%2013%20elk%20diagram(1).pdf)
+(Images/eric elz unit 13 elk diagram(1).pdf)
 
 
 
