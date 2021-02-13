@@ -4,7 +4,8 @@ Cybersecurity
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
-![alt text](https://github.com/thenelsontwins/Eric-Elz-Cybersecurity/blob/main/diagrams/eric%20elz%20unit%2013%20elk%20diagram(1)_1.png)
+
+![Diagram](https://github.com/thenelsontwins/Eric-Elz-Cybersecurity/blob/main/diagrams/eric%20elz%20unit%2013%20elk%20diagram(2).png)
 
 
 ________________________________________________________
@@ -12,94 +13,15 @@ ________________________________________________________
 These files have been tested and used to generate a live ELK deployment on Azure. 
 They can be used to recreate the entire deployment pictured above. 
 
+[Config Web VM with Docker](https://github.com/thenelsontwins/Eric-Elz-Cybersecurity/blob/main/ansible/pentest%20yml.txt)
 
-- _TODO: Enter the playbook file._
+[Config Elk VM with Docker](https://github.com/thenelsontwins/Eric-Elz-Cybersecurity/blob/main/ansible/install-elk%20yml.txt)
 
-
----
-- name: Configure Elk VM w docker
-  hosts: elk
-  remote_user: redteamadmin
-  become: True
-  tasks:
-
-    - name: Install docker.io
-      apt:
-        force_apt_get: yes
-        update_cache: yes
-        name: docker.io
-        state: present
-
-    - name: Install pip3
-      apt:
-        force_apt_get: yes
-        name: python3-pip
-        state: present
-
-    - name: Install Docker python module
-      pip:
-        name: docker
-        state: present
-
-    - name: Use more memory
-      sysctl:
-        name: vm.max_map_count
-        value: 262144
-        state: present
-        reload: yes
-
-    - name: download docker container
-      docker_container:
-        name: elk
-        image: sebp/elk:761
-        state: started
-        restart_policy: always
-
-        published_ports:
-          - 5601:5601
-          - 9200:9200
-          - 5044:5044
-
-    - name: enable docker service
-      systemd:
-        name: docker
-        enabled: yes
-
-________________________________________________________
 
 
 Alternatively, select portions of the __filebeat-playbook.yml__ file may be used to install only certain pieces of it, such as Filebeat.
 
----
-- name: installing and launching filebeat
-  hosts: webservers
-  become: yes
-  tasks:
 
-  - name: download filebeat deb
-    command: curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb
-
-  - name: install filebeat deb
-    command: dpkg -i filebeat-7.4.0-amd64.deb
-
-  - name: drop in filebeat.yml
-    copy:
-      src: /etc/ansible/files/filebeat-config.yml
-      dest: /etc/filebeat/filebeat.yml
-
-  - name: enable and configure system module
-    command: filebeat modules enable system
-
-  - name: setup filebeat
-    command: filebeat setup
-
-  - name: start filebeat service
-    command: service filebeat start
-
-  - name: enable service filebeat on boot
-    systemd:
-      name: filebeat
-      enabled: yes
 
 ________________________________________________________
 
