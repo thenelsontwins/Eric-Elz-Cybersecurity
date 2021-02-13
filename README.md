@@ -126,8 +126,11 @@ The following screenshot displays the result of running `docker ps` after succes
 This ELK server is configured to monitor the following machines:
 
 WEB-1 | 10.1.0.5
+
 WEB-2 | 10.1.0.6
+
 WEB-3 | 10.1.0.7
+
 
 We have installed the following Beats on these machines:
 Filebeat
@@ -144,6 +147,7 @@ In order to use the playbook, you will need to have an Ansible control node alre
 Assuming you have such a control node provisioned: 
 SSH into the control node and follow the steps below:
   
+###
 Copy the install-elk.yml file to /etc/ansible/roles.
 
 ###
@@ -160,8 +164,7 @@ For Filebeat installation we specified within the <filebeat-config.yml> the [hos
 directing both services toward the IP address of the ELK machine.
 
 ###
-In order to check that ELK is running, we directed a web browser to 
-http://[my elk vm public ip]:5601/app/kibana
+In order to check that ELK is running, we directed a web browser to http://[my elk vm public ip]:5601/app/kibana
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
