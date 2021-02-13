@@ -13,10 +13,13 @@ ________________________________________________________
 These files have been tested and used to generate a live ELK deployment on Azure. 
 They can be used to recreate the entire deployment pictured above. 
 
-[Config Web VM with Docker](https://github.com/thenelsontwins/Eric-Elz-Cybersecurity/blob/main/ansible/pentest%20yml.txt)
+[Playbook to Configure Web VM with Docker](https://github.com/thenelsontwins/Eric-Elz-Cybersecurity/blob/main/ansible/pentest%20yml.txt)
 
-[Config Elk VM with Docker](https://github.com/thenelsontwins/Eric-Elz-Cybersecurity/blob/main/ansible/install-elk%20yml.txt)
+[Playbook to Configure Elk VM with Docker](https://github.com/thenelsontwins/Eric-Elz-Cybersecurity/blob/main/ansible/install-elk%20yml.txt)
 
+[Playbook to Configure Filebeat](https://github.com/thenelsontwins/Eric-Elz-Cybersecurity/blob/main/ansible/filebeat%20playbook.txt)
+
+[Playbook to Configure Metricbeat](https://github.com/thenelsontwins/Eric-Elz-Cybersecurity/blob/main/ansible/metricbeat%20playbook.txt)
 
 
 Alternatively, select portions of the __filebeat-playbook.yml__ file may be used to install only certain pieces of it, such as Filebeat.
